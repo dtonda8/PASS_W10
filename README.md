@@ -1,4 +1,4 @@
-# PASS_W9
+# PASS_W10
 **in-built lists are allowed**, all `dict` and `sorted` are not allowed
 
 ### Q1: Sort the Students by Their Kth Score (from [here](https://leetcode.com/problems/sort-the-students-by-their-kth-score/description/))
