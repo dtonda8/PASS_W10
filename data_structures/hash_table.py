@@ -13,6 +13,7 @@ from data_structures.referential_array import ArrayR
 K = TypeVar('K')
 V = TypeVar('V')
 
+
 class FullError(Exception):
     pass
 
@@ -98,28 +99,32 @@ class LinearProbeTable(Generic[K, V]):
         else:
             raise KeyError(key)
 
-    def keys(self) -> list[K]:
+    def keys(self) -> ArrayR[K]:
         """
         Returns all keys in the hash table.
 
         :complexity: O(N) where N is self.table_size.
         """
-        res = []
+        res = ArrayR(self.count)
+        i = 0
         for x in range(self.table_size):
             if self.array[x] is not None:
-                res.append(self.array[x][0])
+                res[i] = self.array[x][0]
+                i += 1
         return res
 
-    def values(self) -> list[V]:
+    def values(self) -> ArrayR[V]:
         """
         Returns all values in the hash table.
 
         :complexity: O(N) where N is self.table_size.
         """
-        res = []
+        res = ArrayR(self.count)
+        i = 0
         for x in range(self.table_size):
             if self.array[x] is not None:
-                res.append(self.array[x][1])
+                res[i] = self.array[x][1]
+                i += 1
         return res
 
     def __contains__(self, key: K) -> bool:
@@ -201,7 +206,7 @@ class LinearProbeTable(Generic[K, V]):
         """
         old_array = self.array
         self.size_index += 1
-        if self.size_index >= len(self.TABLE_SIZES):
+        if self.size_index == len(self.TABLE_SIZES):
             # Cannot be resized further.
             return
         self.array = ArrayR(self.TABLE_SIZES[self.size_index])

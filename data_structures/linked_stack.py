@@ -3,20 +3,8 @@
 __author__ = 'Maria Garcia de la Banda, modified by Brendon Taylor and Alexey Ignatiev'
 __docformat__ = 'reStructuredText'
 
+from data_structures.node import Node
 from data_structures.stack_adt import *
-
-class Node(Generic[T]):
-    """ Implementation of a generic Node class.
-
-        Attributes:
-            item (T): the data to be stored by the node
-            link (Node[T]): reference to the next node
-    """
-
-    def __init__(self, item: T = None) -> None:
-        """ Object initializer. """
-        self.item = item
-        self.link = None
 
 
 class LinkedStack(Stack[T]):
