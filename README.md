@@ -1,5 +1,4 @@
 # PASS_W10
-**in-built lists are allowed**, all `dict` and `sorted` are not allowed
 
 ### Q1: Sort the Students by Their Kth Score (from [here](https://leetcode.com/problems/sort-the-students-by-their-kth-score/description/))
 There is a class with m students and `n` exams. You are given a 0-indexed `m` x `n` integer matrix score, where each row represents one student and `score[i][j]` denotes the score the `i`th student got in the `j`th exam. The matrix score contains distinct integers only.
